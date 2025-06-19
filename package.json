@@ -1,12 +1,12 @@
 {
-  "name": "malik-md",
+  "name": "SATHIO-X-MD",
   "version": "1.0.0",
   "description": "Simple WhatsApp Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "arkhan998",
+  "author": "abdulghhani",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
