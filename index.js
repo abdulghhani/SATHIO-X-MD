@@ -70,20 +70,20 @@ async function start() {
     try {
         const { state, saveCreds } = await useMultiFileAuthState(sessionDir);
         const { version, isLatest } = await fetchLatestBaileysVersion();
-        console.log(`🤖 MALIK-MD using WA v${version.join('.')}, isLatest: ${isLatest}`);
+        console.log(`🤖 SATHIO-X-MD using WA v${version.join('.')}, isLatest: ${isLatest}`);
         
         const Matrix = makeWASocket({
             version,
             logger: pino({ level: 'silent' }),
             printQRInTerminal: useQR,
-            browser: ["MALIK-MD", "safari", "3.3"],
+            browser: ["SATHIO-X-MD", "safari", "3.3"],
             auth: state,
             getMessage: async (key) => {
                 if (store) {
                     const msg = await store.loadMessage(key.remoteJid, key.id);
                     return msg.message || undefined;
                 }
-                return { conversation: "MALIK-MD whatsapp user bot" };
+                return { conversation: "SATHIO-X-MD whatsapp user bot" };
             }
         });
 
