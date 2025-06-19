@@ -1,10 +1,10 @@
 {
-  "name": "whatsapp-bot (MALIK-MD)",
+  "name": "whatsapp-bot (SATHIO-X-MD)",
   "description": " Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
   ],
-  "repository": "https://github.com/arkhan998/MALIK-MD",
+  "repository": "https://github.com/abdulghhani/SATHIO-X-MD",
   "stack": "container",
   "env": { 
       "SESSION_ID": {
