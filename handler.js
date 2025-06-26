@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import path, { join } from 'path';
 import { unwatchFile, watchFile } from 'fs';
 import chalk from 'chalk';
-import Connection from './lib/connection.js';
 
 const { proto } = (await import('@whiskeysockets/baileys')).default;
 const isNumber = x => typeof x === 'number' && !isNaN(x);
@@ -72,7 +71,7 @@ export async function handler(conn, m, chatUpdate) {
         const isROwner = [conn.decodeJid(conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender);
         const isOwner = isROwner || m.fromMe;
         const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender);
-        const isPrems = isROwner || global.prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender);
+        const isPrems = isROwner || db.data.users[m.sender].premiumTime > 0;
 
         if (opts['queque'] && m.text && !(isMods || isPrems)) {
             let queque = this.msgqueque, time = 1000 * 5;
@@ -128,8 +127,6 @@ export async function handler(conn, m, chatUpdate) {
 
             if (!isCommand) continue;
             
-            // Further checks (owner, premium, group, etc.) can be placed here
-            
             let extra = {
                 match,
                 usedPrefix: prefix,
@@ -163,27 +160,14 @@ export async function handler(conn, m, chatUpdate) {
     }
 }
 
-/**
- * Handle groups update
- * @param {import('@whiskeysockets/baileys').WASocket} conn
- * @param {Object} groupsUpdate
- */
 export async function groupsUpdate(conn, groupsUpdate) {
     // Your group update logic here
 }
 
-/**
- * Handle presence update
- * @param {Object} update
- */
 export function presenceUpdate(update) {
     // Your presence update logic here
 }
 
-/**
- * Handle participants update
- * @param {Object} update
- */
 export async function participantsUpdate(update) {
     // Your participants update logic here
 }
