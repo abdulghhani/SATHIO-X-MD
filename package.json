@@ -1,5 +1,5 @@
 { 
-    "name": "GURU",
+    "name": "SATHIO",
     "version": "0.0.1",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
@@ -19,22 +19,22 @@
         "whatsapp",
         "js-whatsapp",
         "whatsapp",
-        "guru-bot",
-        "GURU-bot-md",
+        "sathio-x-md-bot",
+        "SATHIO-bot-md",
         "multi-device",
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Guru322/GURU-BOT",
+    "homepage": "https://github.com/abdulghhani/SATHIO-X-MD",
     "author": {
-        "name": "GURU"
+        "name": "SATHIO"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Guru322/GURU-BOT.git"
+        "url": "git+https://github.com/abdulghhani/SATHIO-X-MD.git"
     },
     "bugs": {
-        "url": "https://github.com/Guru322/GURU-BOT/issues"
+        "url": "https://github.com/abdulghhani/SATHIO-X-MD/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
